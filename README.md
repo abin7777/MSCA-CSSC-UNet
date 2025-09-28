@@ -2,6 +2,6 @@
 
 This is an official repository related to the paper **"MSCA-CSSC-UNet"**.
 
-**Paper link:** []
-**Author:** [Shunbin Chen]，[Dongxiao Zhang]，[Jialiang Xie]
+**Paper link:** []  
+**Author:** [Shunbin Chen]，[Dongxiao Zhang]，[Jialiang Xie]  
 **Dataset link:** [https://www.kaggle.com/datasets/mkachuee/BloodPressureDataset]
