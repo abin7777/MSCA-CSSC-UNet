@@ -16,7 +16,47 @@ MSCA-CSSC-UNet is an enhanced framework based on UNet++, designed specifically f
 ## 2. Core Challenges
 1. **Signal Modality Overhead, SMO**: Most existing high-precision methods rely on multimodal input (such as using ECG and PPG signals simultaneously), which brings problems such as complex device integration, difficult data synchronization, and heavy computational burden, which is not conducive to clinical deployment and wearable device applications.
 2. **Lack of point-wise continuous blood pressure estimation capability**: Existing methods generally adopt a "collect-then-generate" (CTG) paradigm, requiring the completion of one or more complete cardiac cycle signals before outputting blood pressure values ​​(such as SBP/DBP or entire waveforms). This makes it difficult to achieve real-time, instantaneous blood pressure prediction, making it difficult to support dynamic hemodynamic monitoring and timely clinical intervention.
+
 ## 3. Parameter Configuration
+
+### 6.1 Environmental Requirements
+
+- **System**: Ubuntu 18.04
+- **Software**: Python 3.8, PyTorch 2.0.1, CUDA 11.4
+- **Hardware**: Intel(R) Xeon(R) Silver 4208 CPU, NVIDIA Tesla V100S (24GB VRAM), 126GB memory
+
+### 6.2 Core Training Parameters
+
+| Parameter                | Value                                           |
+| ------------------------ | ----------------------------------------------- |
+| Learning rate            | Initial 0.1                                     |
+| Batch size               | 300                                             |
+| Epochs                   | 10                                              |
+| Accumulation steps       | 10                                              |
 
 ## 4. Usage Guide
 
+### 4.1 Environment Setup
+
+```bash
+# Clone repository
+git clone https://github.com/abin7777/MSCA-CSSC-UNet.git
+cd MSCA-CSSC-UNet
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 4.2 Data Preparation
+
+1. Dataset structure (example):
+
+
+   ```plaintext
+   UCI_Dataset/
+   ├── part1.mat/      # Train/test images (32 train + 12 test)
+   ├── ...  # Camera params & near/far planes
+   └── part12.mat  # Training config
+   ```
+
+2. For custom datasets: Generate camera parameter files (refer to NeRF’s official format).
