@@ -29,7 +29,7 @@ MSCA-CSSC-UNet is an enhanced framework based on UNet++, designed specifically f
 
 | Parameter                | Value                                           |
 | ------------------------ | ----------------------------------------------- |
-| Learning rate            | Initial 0.1                                     |
+| Learning rate            | 0.1                                             |
 | Batch size               | 300                                             |
 | Epochs                   | 10                                              |
 | Accumulation steps       | 10                                              |
@@ -54,15 +54,15 @@ pip install -r requirements.txt
 
    ```plaintext
    UCI_Dataset/
-   ├── part1.mat/      
-   ├── ...  
-   └── part12.mat  
+     ├── part1.mat      
+     ├── ...  
+     └── part12.mat  
    ```
 
 ### 4.3 Training and testing Commands
 
 ```bash
-# Train and teston UCI Dataset
+# Train and test on UCI Dataset
 python train_and_test.py
 ```
 
