@@ -54,9 +54,21 @@ pip install -r requirements.txt
 
    ```plaintext
    UCI_Dataset/
-   ├── part1.mat/      # Train/test images (32 train + 12 test)
-   ├── ...  # Camera params & near/far planes
-   └── part12.mat  # Training config
+   ├── part1.mat/      
+   ├── ...  
+   └── part12.mat  
    ```
 
-2. For custom datasets: Generate camera parameter files (refer to NeRF’s official format).
+### 4.3 Training and testing Commands
+
+```bash
+# Train and teston UCI Dataset
+python train_and_test.py
+```
+
+### 4.4 Visualization
+
+```bash
+# Visualize results 
+python visualize.py
+```
